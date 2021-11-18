@@ -1,0 +1,3 @@
+"id","first_name","last_name","address","email","Phone_no","department","Company","created_on","updated_on"
+"1","Anoop","P","{'pin': 679645, 'city': 'vaniyamkulam', 'district': 'palakkad', 'house name': 'kaveri'}","anoop@gmail.com","8867453434","OC","Fashion city","2021-11-13 16:42:13.179603+00:00","2021-11-13 16:42:13.179603+00:00"
+"2","Anitha","T","{'pin': 679648, 'city': 'pathiripala', 'district': 'palakkad', 'house name': 'chithra nivas'}","anitha@gmail.com","8867453433","OC","Shopzilla","2021-11-13 16:44:11.393977+00:00","2021-11-13 16:44:11.393977+00:00"
