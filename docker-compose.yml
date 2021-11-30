@@ -1,0 +1,21 @@
+version: "3.10"
+   
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=ECOMMERCEDB
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Anjal@123
+    volumes:
+      - ./db:/var/lib/postgresql  
+  web:
+    build: .
+    command: python eCommerce/manage.py runserver 0.0.0.0:8600
+    volumes:
+      - .:/code
+    ports:
+      - "8600:8600"
+    depends_on:
+      - db
+      

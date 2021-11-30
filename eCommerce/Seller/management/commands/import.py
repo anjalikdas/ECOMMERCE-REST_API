@@ -18,9 +18,21 @@ class Command(BaseCommand):
         app_name, model_name = options['model'][0].split('.')
         model = apps.get_model(app_name, model_name)
         file_path=options['path']
-        rows = []
+        employee = []
         with open(options['path'][0], 'r') as file:
-            csvreader = csv.reader(file)
-            header = next(csvreader)
+            csvreader = csv.DictReader(file)
             for row in csvreader:
-                model.objects.create(first_name=row[0],last_name=row[1],address=row[2],email=row[3],Phone_no=row[4],department=row[5],Company=Company.objects.get(company_name=row[6]))
+                employee.append(
+
+                        model(first_name=row['first_name'],
+                        last_name=row['last_name'],
+                        address=row['address'],
+                        email=row['email'],
+                        Phone_no=row['Phone_no'],
+                        department=row['department'],
+                        Company=Company.objects.get(company_name=row['Company'])
+                        )
+                    
+                )
+            print(employee)
+            model.objects.bulk_create(employee)
